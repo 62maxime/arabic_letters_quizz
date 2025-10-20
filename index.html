@@ -8,34 +8,34 @@
 </head>
 <body>
     <div class="container">
-        <h1>🕌 Arabic Letters Quiz</h1>
+        <h1>🕌 Arabic Letters Quizz</h1>
         
         <div class="setup-area" id="setupArea">
             <div class="section">
-                <div class="section-title">Select Letters to Practice:</div>
+                <div class="section-title">Sélectionnez les lettres à pratiquer:</div>
                 <div class="controls">
-                    <button class="btn-secondary" id="selectAllBtn">Select All</button>
-                    <button class="btn-secondary" id="deselectAllBtn">Deselect All</button>
+                    <button class="btn-secondary" id="selectAllBtn">Tout Sélectionner</button>
+                    <button class="btn-secondary" id="deselectAllBtn">Tout Désélectionner</button>
                 </div>
                 <div class="letter-grid" id="letterGrid"></div>
             </div>
 
             <div class="section quiz-mode">
-                <div class="section-title">Quiz Mode:</div>
+                <div class="section-title">Mode du Quizz:</div>
                 <div class="radio-group">
                     <label class="radio-label">
-                        <input type="radio" name="quizMode" value="continuous" checked>
-                        <span>Continuous (keep testing)</span>
+                        <input type="radio" name="quizMode" value="continuous" >
+                        <span>En continue (aléatoire)</span>
                     </label>
                     <label class="radio-label">
-                        <input type="radio" name="quizMode" value="once">
-                        <span>Test each letter once</span>
+                        <input type="radio" name="quizMode" value="once" checked>
+                        <span>Une seule fois une lettre</span>
                     </label>
                 </div>
             </div>
             
             <button class="btn-primary start-quiz-main" id="startQuizBtn">
-                Start Quiz
+                Démarrer le Quizz
             </button>
         </div>
 
@@ -45,7 +45,7 @@
             <div class="feedback" id="feedback"></div>
             <div class="options" id="options"></div>
             <button class="btn-secondary back-btn" id="backToSetupBtn">
-                Back to Letter Selection
+                Retour vers la sélection des lettres
             </button>
         </div>
     </div>

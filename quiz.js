@@ -14,8 +14,8 @@ const arabicLetters = [
     { arabic: 'ش', name: 'shin' },
     { arabic: 'ص', name: 'sad' },
     { arabic: 'ض', name: 'dad' },
-    { arabic: 'ط', name: 'ta' },
-    { arabic: 'ظ', name: 'za' },
+    { arabic: 'ط', name: 'Tta' },
+    { arabic: 'ظ', name: 'dha' },
     { arabic: 'ع', name: 'ain' },
     { arabic: 'غ', name: 'ghain' },
     { arabic: 'ف', name: 'fa' },
@@ -24,7 +24,7 @@ const arabicLetters = [
     { arabic: 'ل', name: 'lam' },
     { arabic: 'م', name: 'mim' },
     { arabic: 'ن', name: 'nun' },
-    { arabic: 'ه', name: 'ha' },
+    { arabic: 'ه', name: 'haa' },
     { arabic: 'و', name: 'waw' },
     { arabic: 'ي', name: 'ya' }
 ];
@@ -66,7 +66,7 @@ function startQuiz() {
     });
 
     if (selectedLetters.length < 2) {
-        alert('Please select at least 2 letters to start the quiz!');
+        alert('Sélectionnez au moins 2 lettres pour commencer le quizz !');
         return;
     }
 
@@ -160,7 +160,7 @@ function checkAnswer(selected, btn) {
         feedback.className = 'feedback correct';
     } else {
         btn.classList.add('incorrect');
-        feedback.textContent = `✗ Wrong! It's ${currentLetter.name}`;
+        feedback.textContent = `✗ Faux! C'était ${currentLetter.name}`;
         feedback.className = 'feedback incorrect';
         
         const allButtons = document.querySelectorAll('.option-btn');
@@ -185,7 +185,7 @@ function showFinalScore() {
     
     const feedbackDiv = document.getElementById('feedback');
     const scoreDiv = document.createElement('div');
-    scoreDiv.textContent = `Quiz Complete! Final Score: ${score} / ${questionsAnswered} (${percentage}%)`;
+    scoreDiv.textContent = `Quizz finit! Score final: ${score} / ${questionsAnswered} (${percentage}%)`;
     feedbackDiv.innerHTML = '';
     feedbackDiv.appendChild(scoreDiv);
     feedbackDiv.className = 'feedback';
@@ -194,7 +194,7 @@ function showFinalScore() {
     optionsDiv.innerHTML = '';
     const retakeBtn = document.createElement('button');
     retakeBtn.className = 'btn-primary retake-btn';
-    retakeBtn.textContent = 'Retake Quiz';
+    retakeBtn.textContent = 'Refaire le Quizz';
     retakeBtn.addEventListener('click', startQuiz);
     optionsDiv.appendChild(retakeBtn);
 }

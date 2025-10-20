@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabic Letters Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🕌 Arabic Letters Quiz</h1>
+        
+        <div class="setup-area" id="setupArea">
+            <div class="section">
+                <div class="section-title">Select Letters to Practice:</div>
+                <div class="controls">
+                    <button class="btn-secondary" id="selectAllBtn">Select All</button>
+                    <button class="btn-secondary" id="deselectAllBtn">Deselect All</button>
+                </div>
+                <div class="letter-grid" id="letterGrid"></div>
+            </div>
+
+            <div class="section quiz-mode">
+                <div class="section-title">Quiz Mode:</div>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="quizMode" value="continuous" checked>
+                        <span>Continuous (keep testing)</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="quizMode" value="once">
+                        <span>Test each letter once</span>
+                    </label>
+                </div>
+            </div>
+            
+            <button class="btn-primary start-quiz-main" id="startQuizBtn">
+                Start Quiz
+            </button>
+        </div>
+
+        <div class="quiz-area" id="quizArea">
+            <div class="score" id="score">Score: 0 / 0</div>
+            <div class="arabic-display" id="arabicDisplay"></div>
+            <div class="feedback" id="feedback"></div>
+            <div class="options" id="options"></div>
+            <button class="btn-secondary back-btn" id="backToSetupBtn">
+                Back to Letter Selection
+            </button>
+        </div>
+    </div>
+
+    <script src="quiz.js"></script>
+</body>
+</html>

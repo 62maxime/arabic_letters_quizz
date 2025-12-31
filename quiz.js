@@ -1,32 +1,32 @@
 const arabicLetters = [
-    { arabic: 'ا', name: 'alif' },
-    { arabic: 'ب', name: 'ba' },
-    { arabic: 'ت', name: 'ta' },
-    { arabic: 'ث', name: 'tha' },
-    { arabic: 'ج', name: 'jim' },
-    { arabic: 'ح', name: 'ha' },
-    { arabic: 'خ', name: 'kha' },
-    { arabic: 'د', name: 'dal' },
-    { arabic: 'ذ', name: 'dhal' },
-    { arabic: 'ر', name: 'ra' },
-    { arabic: 'ز', name: 'zay' },
-    { arabic: 'س', name: 'sin' },
-    { arabic: 'ش', name: 'shin' },
-    { arabic: 'ص', name: 'sad' },
-    { arabic: 'ض', name: 'dad' },
-    { arabic: 'ط', name: 'Tta' },
-    { arabic: 'ظ', name: 'dha' },
-    { arabic: 'ع', name: 'ain' },
-    { arabic: 'غ', name: 'ghain' },
-    { arabic: 'ف', name: 'fa' },
-    { arabic: 'ق', name: 'qaf' },
-    { arabic: 'ك', name: 'kaf' },
-    { arabic: 'ل', name: 'lam' },
-    { arabic: 'م', name: 'mim' },
-    { arabic: 'ن', name: 'nun' },
-    { arabic: 'ه', name: 'haa' },
-    { arabic: 'و', name: 'waw' },
-    { arabic: 'ي', name: 'ya' }
+    { arabic: ['ا', 'ﺎ'], name: 'alif' },
+    { arabic: ['ب', 'ﺐ', 'ﺒ', 'ﺑ'], name: 'ba' },
+    { arabic: ['ت', 'ﺖ', 'ﺘ', 'ﺗ'], name: 'ta' },
+    { arabic: ['ث', 'ﺚ', 'ﺜ', 'ﺛ'], name: 'tha' },
+    { arabic: ['ج', 'ﺞ', 'ﺠ', 'ﺟ'], name: 'jeem' },
+    { arabic: ['ح', 'ﺢ', 'ﺤ', 'ﺣ'], name: 'ha' },
+    { arabic: ['خ', 'ﺦ', 'ﺨ', 'ﺧ'], name: 'kha' },
+    { arabic: ['د', 'ﺪ'], name: 'dal' },
+    { arabic: ['ذ', 'ﺬ'], name: 'thal' },
+    { arabic: ['ر', 'ﺮ'], name: 'ra' },
+    { arabic: ['ز', 'ﺰ'], name: 'zay' },
+    { arabic: ['س', 'ﺲ', 'ﺴ', 'ﺳ'], name: 'seen' },
+    { arabic: ['ش', 'ﺶ', 'ﺸ', 'ﺷ'], name: 'sheen' },
+    { arabic: ['ص', 'ﺺ', 'ﺼ', 'ﺻ'], name: 'sad' },
+    { arabic: ['ض', 'ﺾ', 'ﻀ', 'ﺿ'], name: 'dad' },
+    { arabic: ['ط', 'ﻂ', 'ﻄ', 'ﻃ'], name: 'ta' },
+    { arabic: ['ظ', 'ﻆ', 'ﻈ', 'ﻇ'], name: 'za' },
+    { arabic: ['ع', 'ﻊ', 'ﻌ', 'ﻋ'], name: 'ayn' },
+    { arabic: ['غ', 'ﻎ', 'ﻐ', 'ﻏ'], name: 'ghayn' },
+    { arabic: ['ف', 'ﻒ', 'ﻔ', 'ﻓ'], name: 'fa' },
+    { arabic: ['ق', 'ﻖ', 'ﻘ', 'ﻗ'], name: 'qaf' },
+    { arabic: ['ك', 'ﻚ', 'ﻜ', 'ﻛ'], name: 'kaf' },
+    { arabic: ['ل', 'ﻞ', 'ﻠ', 'ﻟ'], name: 'lam' },
+    { arabic: ['م', 'ﻢ', 'ﻤ', 'ﻣ'], name: 'meem' },
+    { arabic: ['ن', 'ﻦ', 'ﻨ', 'ﻧ'], name: 'noon' },
+    { arabic: ['ه', 'ﻪ', 'ﻬ', 'ﻫ'], name: 'ha' },
+    { arabic: ['و', 'ﻮ'], name: 'waw' },
+    { arabic: ['ي', 'ﻲ', 'ﻴ', 'ﻳ'], name: 'ya' }
 ];
 
 let selectedLetters = [];
@@ -43,7 +43,7 @@ function initLetterGrid() {
         div.innerHTML = `
             <input type="checkbox" class="letter-checkbox" id="letter${index}" value="${index}" checked>
             <label for="letter${index}" class="letter-label">
-                <span class="arabic-char">${letter.arabic}</span>
+                <span class="arabic-char">${letter.arabic[0]}</span>
                 <span class="letter-name">${letter.name}</span>
             </label>
         `;
@@ -74,7 +74,7 @@ function startQuiz() {
     score = 0;
     questionsAnswered = 0;
     remainingLetters = [...selectedLetters];
-    
+
     document.getElementById('setupArea').classList.add('hidden');
     document.getElementById('quizArea').classList.add('active');
     nextQuestion();
@@ -93,15 +93,17 @@ function nextQuestion() {
 
     document.getElementById('feedback').textContent = '';
     document.getElementById('feedback').className = 'feedback';
-    
+
     if (quizMode === 'once') {
         const randomIndex = Math.floor(Math.random() * remainingLetters.length);
         currentLetter = remainingLetters[randomIndex];
     } else {
         currentLetter = selectedLetters[Math.floor(Math.random() * selectedLetters.length)];
     }
-    
-    document.getElementById('arabicDisplay').textContent = currentLetter.arabic;
+
+    const randomIndex = Math.floor(Math.random() * currentLetter.arabic.length);
+    const arabic = currentLetter.arabic[randomIndex]
+    document.getElementById('arabicDisplay').textContent = arabic;
 
     const options = generateOptions(currentLetter);
     const optionsDiv = document.getElementById('options');
@@ -111,7 +113,7 @@ function nextQuestion() {
         const btn = document.createElement('button');
         btn.className = 'option-btn';
         btn.textContent = option.name;
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
             checkAnswer(option, btn);
         });
         optionsDiv.appendChild(btn);
@@ -123,7 +125,7 @@ function nextQuestion() {
 function generateOptions(correct) {
     const options = [correct];
     const availableLetters = selectedLetters.filter(l => l !== correct);
-    
+
     while (options.length < Math.min(4, selectedLetters.length)) {
         const random = availableLetters[Math.floor(Math.random() * availableLetters.length)];
         if (!options.includes(random)) {
@@ -152,7 +154,7 @@ function checkAnswer(selected, btn) {
     });
 
     const feedback = document.getElementById('feedback');
-    
+
     if (selected === currentLetter) {
         score++;
         btn.classList.add('correct');
@@ -162,7 +164,7 @@ function checkAnswer(selected, btn) {
         btn.classList.add('incorrect');
         feedback.textContent = `✗ Faux! C'était ${currentLetter.name}`;
         feedback.className = 'feedback incorrect';
-        
+
         const allButtons = document.querySelectorAll('.option-btn');
         allButtons.forEach(b => {
             if (b.textContent === currentLetter.name) {
@@ -176,20 +178,20 @@ function checkAnswer(selected, btn) {
     }
 
     updateScore();
-    setTimeout(nextQuestion, 2000);
+    setTimeout(nextQuestion, 1000);
 }
 
 function showFinalScore() {
     const percentage = Math.round((score / questionsAnswered) * 100);
     document.getElementById('arabicDisplay').textContent = '🎉';
-    
+
     const feedbackDiv = document.getElementById('feedback');
     const scoreDiv = document.createElement('div');
     scoreDiv.textContent = `Quizz finit! Score final: ${score} / ${questionsAnswered} (${percentage}%)`;
     feedbackDiv.innerHTML = '';
     feedbackDiv.appendChild(scoreDiv);
     feedbackDiv.className = 'feedback';
-    
+
     const optionsDiv = document.getElementById('options');
     optionsDiv.innerHTML = '';
     const retakeBtn = document.createElement('button');

@@ -24,7 +24,7 @@ const arabicLetters = [
     { arabic: ['ل', 'ﻞ', 'ﻠ', 'ﻟ'], name: 'lam' },
     { arabic: ['م', 'ﻢ', 'ﻤ', 'ﻣ'], name: 'mim' },
     { arabic: ['ن', 'ﻦ', 'ﻨ', 'ﻧ'], name: 'nun' },
-    { arabic: ['ه', 'ﻪ', 'ﻬ', 'ﻫ'], name: 'ha' },
+    { arabic: ['ه', 'ﻪ', 'ﻬ', 'ﻫ'], name: 'haa' },
     { arabic: ['و', 'ﻮ'], name: 'waw' },
     { arabic: ['ي', 'ﻲ', 'ﻴ', 'ﻳ'], name: 'ya' }
 ];

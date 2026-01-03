@@ -28,7 +28,29 @@ const arabicWords = {
         { arabic: 'نَافِذَةٌ', phonetic: 'naafidzatoun', french: 'fenêtre' },
         { arabic: 'قَلَمٌ مَكْسُورٌ', phonetic: 'qalamoun maksouroun', french: 'crayon cassé' },
         { arabic: 'بَابٌ مَفْتُوحٌ', phonetic: 'baaboun maftouhoun', french: 'porte ouverte' },
-    ]
+    ],
+    'Cours 4': [
+        { arabic: 'مَدِينَةٌ', phonetic: 'madiinatoun', french: 'ville' },
+        { arabic: 'جَامِعَةٌ', phonetic: 'jaami\'atoun', french: 'université' },
+        { arabic: 'مَكْتَبَةٌ', phonetic: 'maktabatoun', french: 'bibliothèque' },
+        { arabic: 'حَدِيقَةٌ', phonetic: 'hadiiقatoun', french: 'jardin' },
+        { arabic: 'شَارِعٌ', phonetic: 'shaari\'oun', french: 'rue' },
+        { arabic: 'مَتْجَرٌ', phonetic: 'matjaroun', french: 'supermarché' },
+        { arabic: 'قَرْيَةٌ', phonetic: 'qaryatoun', french: 'village' },
+        { arabic: 'حَقْلٌ', phonetic: 'haqloun', french: 'champs' },
+        { arabic: 'مَزْرَعَةٌ', phonetic: 'mazra\'atoun', french: 'ferme' },
+        { arabic: 'مَسْجِدٌ', phonetic: 'masjidoun', french: 'mosquée' },
+        { arabic: 'سُوقٌ', phonetic: 'souqoun', french: 'marché' },
+        { arabic: 'مَدْرَسَةٌ', phonetic: 'madrasatoun', french: 'école' },
+    ],
+    'Cours 5': [
+        { arabic: 'كِتَابٌ قَدِيمٌ', phonetic: 'kitaaboun qadiimoun', french: 'un livre ancien' },
+        { arabic: 'دَفْتَرٌ جَدِيدٌ', phonetic: 'daftaroun jadiidoun', french: 'un cahier neuf' },
+        { arabic: 'بَيْتٌ صَغِيرٌ', phonetic: 'baytoun saghiiroun', french: 'une petite maison' },
+        { arabic: 'مَتْجَرٌ كَبِيرٌ', phonetic: 'matjaroun kabiiroun', french: 'un grand magasin' },
+        { arabic: 'مَسْجِدٌ جَمِيلٌ', phonetic: 'masjidoun jamiiloun', french: 'une belle mosquée' },
+        { arabic: 'حَقْلٌ وَاسِعٌ', phonetic: 'haqloun waasi\'oun', french: 'un champs vaste' },
+    ],
 };
 
 let selectedCategories = [];
@@ -255,7 +277,7 @@ document.getElementById('submitBtn').addEventListener('click', checkAnswer);
 document.getElementById('answerInput').addEventListener('keypress', handleKeyPress);
 
 // Mode selection
-document.getElementById('learnModeBtn').addEventListener('click', function() {
+document.getElementById('learnModeBtn').addEventListener('click', function () {
     appMode = 'learn';
     document.getElementById('learnModeBtn').classList.add('active');
     document.getElementById('quizModeBtn').classList.remove('active');
@@ -263,7 +285,7 @@ document.getElementById('learnModeBtn').addEventListener('click', function() {
     document.getElementById('startQuizBtn').textContent = 'Démarrer l\'apprentissage';
 });
 
-document.getElementById('quizModeBtn').addEventListener('click', function() {
+document.getElementById('quizModeBtn').addEventListener('click', function () {
     appMode = 'quiz';
     document.getElementById('quizModeBtn').classList.add('active');
     document.getElementById('learnModeBtn').classList.remove('active');

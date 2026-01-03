@@ -1,5 +1,5 @@
 const arabicWords = {
-    'Tête': [
+    'Cours 1': [
         { arabic: 'رَأْسٌ', phonetic: 'ra\'soun', french: 'tête' },
         { arabic: 'وَجْهٌ', phonetic: 'wajhoun', french: 'visage' },
         { arabic: 'عَيْنٌ', phonetic: '\'aynoun', french: 'œil' },

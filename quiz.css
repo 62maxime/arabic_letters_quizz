@@ -173,11 +173,12 @@ h1 {
 }
 
 .vocab-arabic {
-    font-family: initial;
-    font-size: 2em;
+    font-family: 'Noto Sans Arabic', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+    font-size: 2.2em;
     font-weight: bold;
     color: #667eea;
     text-align: center;
+    line-height: 1.7;
 }
 
 .vocab-phonetic {
@@ -240,10 +241,11 @@ h1 {
 }
 
 .letter-form-char {
-    font-family: initial;
-    font-size: 2.5em;
+    font-family: 'Noto Sans Arabic', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+    font-size: 2.8em;
     color: #667eea;
     font-weight: bold;
+    line-height: 1.5;
 }
 
 .section {
@@ -309,10 +311,11 @@ h1 {
 }
 
 .arabic-char {
-    font-family: initial;
-    font-size: 2em;
+    font-family: 'Noto Sans Arabic', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+    font-size: 2.2em;
     font-weight: bold;
     margin-right: 10px;
+    line-height: 1.5;
 }
 
 .letter-name, .category-name {
@@ -399,9 +402,9 @@ h1 {
 }
 
 .arabic-display {
-    font-family: initial;
+    font-family: 'Noto Sans Arabic', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
     text-align: center;
-    font-size: 5em;
+    font-size: 5.5em;
     font-weight: bold;
     color: #667eea;
     margin: 40px 0;
@@ -409,6 +412,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    line-height: 1.6;
 }
 
 .feedback {

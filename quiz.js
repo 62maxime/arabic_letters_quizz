@@ -29,12 +29,18 @@ const arabicLetters = [
     { arabic: ['ي', 'ﻲ', 'ﻴ', 'ﻳ'], name: 'ya' }
 ];
 
+const formLabels = {
+    2: ['isolée', 'finale'],
+    4: ['isolée', 'finale', 'médiane', 'initiale']
+};
+
 let selectedLetters = [];
 let currentLetter = null;
 let score = 0;
 let questionsAnswered = 0;
 let quizMode = 'continuous';
 let remainingLetters = [];
+let appMode = 'learn'; // 'learn' or 'quiz'
 
 function initLetterGrid() {
     const grid = document.getElementById('letterGrid');
@@ -65,8 +71,60 @@ function startQuiz() {
         selectedLetters.push(arabicLetters[parseInt(cb.value)]);
     });
 
+    if (selectedLetters.length === 0) {
+        alert('Sélectionnez au moins une lettre pour commencer !');
+        return;
+    }
+
+    document.getElementById('setupArea').classList.add('hidden');
+
+    if (appMode === 'learn') {
+        startLearnMode();
+    } else {
+        startQuizMode();
+    }
+}
+
+function startLearnMode() {
+    document.getElementById('learnArea').classList.add('active');
+
+    const lettersList = document.getElementById('lettersList');
+    lettersList.innerHTML = '';
+
+    selectedLetters.forEach(letter => {
+        const letterCard = document.createElement('div');
+        letterCard.className = 'letter-learn-card';
+
+        const letterName = document.createElement('div');
+        letterName.className = 'letter-learn-name';
+        letterName.textContent = letter.name;
+        letterCard.appendChild(letterName);
+
+        const formsGrid = document.createElement('div');
+        formsGrid.className = 'letter-forms-grid';
+
+        const labels = formLabels[letter.arabic.length];
+        letter.arabic.forEach((form, index) => {
+            const formItem = document.createElement('div');
+            formItem.className = 'letter-form-item';
+            formItem.innerHTML = `
+                <div class="letter-form-label">${labels[index]}</div>
+                <div class="letter-form-char">${form}</div>
+            `;
+            formsGrid.appendChild(formItem);
+        });
+
+        letterCard.appendChild(formsGrid);
+        lettersList.appendChild(letterCard);
+    });
+
+    document.getElementById('learnProgress').textContent = `${selectedLetters.length} lettre${selectedLetters.length > 1 ? 's' : ''} sélectionnée${selectedLetters.length > 1 ? 's' : ''}`;
+}
+
+function startQuizMode() {
     if (selectedLetters.length < 2) {
-        alert('Sélectionnez au moins 2 lettres pour commencer le quizz !');
+        alert('Sélectionnez au moins 2 lettres pour commencer le quiz !');
+        document.getElementById('setupArea').classList.remove('hidden');
         return;
     }
 
@@ -75,7 +133,6 @@ function startQuiz() {
     questionsAnswered = 0;
     remainingLetters = [...selectedLetters];
 
-    document.getElementById('setupArea').classList.add('hidden');
     document.getElementById('quizArea').classList.add('active');
     nextQuestion();
 }
@@ -83,6 +140,7 @@ function startQuiz() {
 function backToSetup() {
     document.getElementById('setupArea').classList.remove('hidden');
     document.getElementById('quizArea').classList.remove('active');
+    document.getElementById('learnArea').classList.remove('active');
 }
 
 function nextQuestion() {
@@ -102,7 +160,7 @@ function nextQuestion() {
     }
 
     const randomIndex = Math.floor(Math.random() * currentLetter.arabic.length);
-    const arabic = currentLetter.arabic[randomIndex]
+    const arabic = currentLetter.arabic[randomIndex];
     document.getElementById('arabicDisplay').textContent = arabic;
 
     const options = generateOptions(currentLetter);
@@ -187,7 +245,7 @@ function showFinalScore() {
 
     const feedbackDiv = document.getElementById('feedback');
     const scoreDiv = document.createElement('div');
-    scoreDiv.textContent = `Quizz finit! Score final: ${score} / ${questionsAnswered} (${percentage}%)`;
+    scoreDiv.textContent = `Quiz terminé! Score final: ${score} / ${questionsAnswered} (${percentage}%)`;
     feedbackDiv.innerHTML = '';
     feedbackDiv.appendChild(scoreDiv);
     feedbackDiv.className = 'feedback';
@@ -196,8 +254,8 @@ function showFinalScore() {
     optionsDiv.innerHTML = '';
     const retakeBtn = document.createElement('button');
     retakeBtn.className = 'btn-primary retake-btn';
-    retakeBtn.textContent = 'Refaire le Quizz';
-    retakeBtn.addEventListener('click', startQuiz);
+    retakeBtn.textContent = 'Refaire le Quiz';
+    retakeBtn.addEventListener('click', startQuizMode);
     optionsDiv.appendChild(retakeBtn);
 }
 
@@ -213,3 +271,21 @@ document.getElementById('selectAllBtn').addEventListener('click', selectAll);
 document.getElementById('deselectAllBtn').addEventListener('click', deselectAll);
 document.getElementById('startQuizBtn').addEventListener('click', startQuiz);
 document.getElementById('backToSetupBtn').addEventListener('click', backToSetup);
+document.getElementById('backToSetupFromLearnBtn').addEventListener('click', backToSetup);
+
+// Mode selection
+document.getElementById('learnModeBtn').addEventListener('click', function() {
+    appMode = 'learn';
+    document.getElementById('learnModeBtn').classList.add('active');
+    document.getElementById('quizModeBtn').classList.remove('active');
+    document.getElementById('quizModeSection').style.display = 'none';
+    document.getElementById('startQuizBtn').textContent = 'Démarrer l\'apprentissage';
+});
+
+document.getElementById('quizModeBtn').addEventListener('click', function() {
+    appMode = 'quiz';
+    document.getElementById('quizModeBtn').classList.add('active');
+    document.getElementById('learnModeBtn').classList.remove('active');
+    document.getElementById('quizModeSection').style.display = 'block';
+    document.getElementById('startQuizBtn').textContent = 'Démarrer le Quiz';
+});

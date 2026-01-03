@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabic Letters Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav-header">
+            <a href="index.html" class="back-home">← Retour à l'accueil</a>
+        </div>
+
+        <h1>🔤 Quiz des Lettres Arabes</h1>
+
+        <div class="setup-area" id="setupArea">
+            <div class="section mode-selection">
+                <div class="section-title">Choisissez votre mode:</div>
+                <div class="mode-buttons">
+                    <button class="mode-btn active" id="learnModeBtn">
+                        <span class="mode-icon">📖</span>
+                        <span class="mode-name">Apprentissage</span>
+                        <span class="mode-desc">Découvrir les lettres</span>
+                    </button>
+                    <button class="mode-btn" id="quizModeBtn">
+                        <span class="mode-icon">✏️</span>
+                        <span class="mode-name">Quiz</span>
+                        <span class="mode-desc">Tester vos connaissances</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Sélectionnez les lettres à pratiquer:</div>
+                <div class="controls">
+                    <button class="btn-secondary" id="selectAllBtn">Tout Sélectionner</button>
+                    <button class="btn-secondary" id="deselectAllBtn">Tout Désélectionner</button>
+                </div>
+                <div class="letter-grid" id="letterGrid"></div>
+            </div>
+
+            <div class="section quiz-mode" id="quizModeSection" style="display: none;">
+                <div class="section-title">Mode du Quiz:</div>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="quizMode" value="continuous" >
+                        <span>En continue (aléatoire)</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="quizMode" value="once" checked>
+                        <span>Chaque lettre une seule fois</span>
+                    </label>
+                </div>
+            </div>
+
+            <button class="btn-primary start-quiz-main" id="startQuizBtn">
+                Démarrer
+            </button>
+        </div>
+
+        <div class="quiz-area" id="quizArea">
+            <div class="score" id="score">Score: 0 / 0</div>
+            <div class="arabic-display" id="arabicDisplay"></div>
+            <div class="feedback" id="feedback"></div>
+            <div class="options" id="options"></div>
+            <button class="btn-secondary back-btn" id="backToSetupBtn">
+                Retour vers la sélection des lettres
+            </button>
+        </div>
+
+        <div class="learn-area" id="learnArea">
+            <div class="learn-header">
+                <h2>Alphabet Arabe</h2>
+                <div class="learn-progress" id="learnProgress"></div>
+            </div>
+            <div class="letters-list" id="lettersList"></div>
+            <button class="btn-secondary back-btn" id="backToSetupFromLearnBtn">
+                Retour vers la sélection
+            </button>
+        </div>
+    </div>
+
+    <script src="quiz.js"></script>
+</body>
+</html>

@@ -3,53 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arabic Letters Quiz</title>
+    <title>Arabic Learning Hub</title>
     <link rel="stylesheet" href="quiz.css">
+    <style>
+        .hub-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .hub-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #2c3e50;
+        }
+
+        .quiz-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .quiz-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .quiz-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .quiz-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .quiz-card h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .quiz-card p {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🕌 Arabic Letters Quizz</h1>
-        
-        <div class="setup-area" id="setupArea">
-            <div class="section">
-                <div class="section-title">Sélectionnez les lettres à pratiquer:</div>
-                <div class="controls">
-                    <button class="btn-secondary" id="selectAllBtn">Tout Sélectionner</button>
-                    <button class="btn-secondary" id="deselectAllBtn">Tout Désélectionner</button>
-                </div>
-                <div class="letter-grid" id="letterGrid"></div>
-            </div>
+    <div class="hub-container">
+        <h1 class="hub-title">🕌 Centre d'Apprentissage de l'Arabe</h1>
 
-            <div class="section quiz-mode">
-                <div class="section-title">Mode du Quizz:</div>
-                <div class="radio-group">
-                    <label class="radio-label">
-                        <input type="radio" name="quizMode" value="continuous" >
-                        <span>En continue (aléatoire)</span>
-                    </label>
-                    <label class="radio-label">
-                        <input type="radio" name="quizMode" value="once" checked>
-                        <span>Chaque lettre une seule fois</span>
-                    </label>
-                </div>
-            </div>
-            
-            <button class="btn-primary start-quiz-main" id="startQuizBtn">
-                Démarrer le Quizz
-            </button>
-        </div>
+        <div class="quiz-cards">
+            <a href="letters-quiz.html" class="quiz-card">
+                <div class="quiz-icon">🔤</div>
+                <h2>Quiz des Lettres</h2>
+                <p>Apprenez à reconnaître les 28 lettres de l'alphabet arabe dans leurs différentes formes</p>
+            </a>
 
-        <div class="quiz-area" id="quizArea">
-            <div class="score" id="score">Score: 0 / 0</div>
-            <div class="arabic-display" id="arabicDisplay"></div>
-            <div class="feedback" id="feedback"></div>
-            <div class="options" id="options"></div>
-            <button class="btn-secondary back-btn" id="backToSetupBtn">
-                Retour vers la sélection des lettres
-            </button>
+            <a href="words-quiz.html" class="quiz-card">
+                <div class="quiz-icon">📚</div>
+                <h2>Quiz des Mots</h2>
+                <p>Pratiquez la traduction de mots arabes courants en français</p>
+            </a>
         </div>
     </div>
-
-    <script src="quiz.js"></script>
 </body>
 </html>

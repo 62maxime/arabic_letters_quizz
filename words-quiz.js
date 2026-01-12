@@ -62,6 +62,7 @@ let quizMode = 'continuous';
 let remainingWords = [];
 let isAnswered = false;
 let appMode = 'learn'; // 'learn' or 'quiz'
+let sensMode = "toFrench"
 
 function initCategoryGrid() {
     const grid = document.getElementById('categoryGrid');
@@ -145,6 +146,7 @@ function startLearnMode() {
 
 function startQuizMode() {
     quizMode = document.querySelector('input[name="quizMode"]:checked').value;
+    sensMode = document.querySelector('input[name="sensMode"]:checked').value;
     score = 0;
     questionsAnswered = 0;
     remainingWords = [...selectedWords];
@@ -181,7 +183,12 @@ function nextQuestion() {
         currentWord = selectedWords[Math.floor(Math.random() * selectedWords.length)];
     }
 
-    document.getElementById('arabicDisplay').textContent = currentWord.arabic;
+    if (sensMode == 'toFrench') {
+        document.getElementById('arabicDisplay').textContent = currentWord.arabic;
+    } else {
+        document.getElementById('arabicDisplay').textContent = currentWord.french;
+
+    }
     document.getElementById('answerInput').focus();
     updateScore();
 }
@@ -203,7 +210,15 @@ function checkAnswer() {
 
     const userAnswer = document.getElementById('answerInput').value;
     const normalizedUserAnswer = normalizeText(userAnswer);
-    const normalizedCorrectAnswer = normalizeText(currentWord.french);
+    let normalizedCorrectAnswer = ""
+    let realAnswer = ""
+    if (sensMode == 'toFrench') {
+        normalizedCorrectAnswer = normalizeText(currentWord.french);
+        realAnswer = currentWord.french
+    } else {
+        normalizedCorrectAnswer = normalizeText(currentWord.arabic);
+        realAnswer = currentWord.arabic
+    }
 
     questionsAnswered++;
     isAnswered = true;
@@ -221,7 +236,7 @@ function checkAnswer() {
         feedback.className = 'feedback correct';
     } else {
         answerInput.classList.add('incorrect');
-        feedback.innerHTML = `✗ Faux! La bonne réponse est: <strong>${currentWord.french}</strong> <span class="phonetic-display">(${currentWord.phonetic})</span>`;
+        feedback.innerHTML = `✗ Faux! La bonne réponse est: <strong>${realAnswer}</strong> <span class="phonetic-display">(${currentWord.phonetic})</span>`;
         feedback.className = 'feedback incorrect';
     }
 
@@ -282,6 +297,7 @@ document.getElementById('learnModeBtn').addEventListener('click', function () {
     document.getElementById('learnModeBtn').classList.add('active');
     document.getElementById('quizModeBtn').classList.remove('active');
     document.getElementById('quizModeSection').style.display = 'none';
+    document.getElementById('quizSensSection').style.display = 'none';
     document.getElementById('startQuizBtn').textContent = 'Démarrer l\'apprentissage';
 });
 
@@ -290,5 +306,6 @@ document.getElementById('quizModeBtn').addEventListener('click', function () {
     document.getElementById('quizModeBtn').classList.add('active');
     document.getElementById('learnModeBtn').classList.remove('active');
     document.getElementById('quizModeSection').style.display = 'block';
+    document.getElementById('quizSensSection').style.display = 'block';
     document.getElementById('startQuizBtn').textContent = 'Démarrer le Quiz';
 });

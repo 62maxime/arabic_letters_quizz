@@ -224,7 +224,9 @@ function nextQuestion() {
         const randomIndex = Math.floor(Math.random() * remainingWords.length);
         currentWord = remainingWords[randomIndex];
     } else {
-        currentWord = selectedWords[Math.floor(Math.random() * selectedWords.length)];
+        let availableWords = selectedWords.filter(w => w !== currentWord);
+        if (availableWords.length === 0) availableWords = selectedWords;
+        currentWord = availableWords[Math.floor(Math.random() * availableWords.length)];
     }
 
     if (sensMode == 'toFrench') {

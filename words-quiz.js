@@ -260,7 +260,7 @@ function checkAnswer() {
         normalizedCorrectAnswer = normalizeText(currentWord.french);
         realAnswer = currentWord.french
     } else {
-        normalizedCorrectAnswer = normalizeText(currentWord.arabic);
+        normalizedCorrectAnswer = normalizeText(currentWord.phonetic);
         realAnswer = currentWord.arabic
     }
 

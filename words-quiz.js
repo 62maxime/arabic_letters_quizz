@@ -51,17 +51,19 @@ const arabicWords = {
         { arabic: 'مَسْجِدٌ جَمِيلٌ', phonetic: 'masjidoun jamiiloun', french: 'une belle mosquée' },
         { arabic: 'حَقْلٌ وَاسِعٌ', phonetic: 'haqloun waasi\'oun', french: 'un champs vaste' },
     ],
-    'Cours 6': [
+    'Cours 6-1': [
         { arabic: 'إِسْلَامٌ', phonetic: 'islaamoun', french: 'islam' },
-        { arabic: 'أَرْضٌ', phonetic: 'ardoun', french: 'terre' },
-        { arabic: 'مَمْلُوءٌ', phonetic: 'mamlou\'oun', french: 'rempli' },
-        { arabic: 'قُرْآنٌ', phonetic: 'qur\'aanoun', french: 'coran' },
+        { arabic: 'أَرْضٌ', phonetic: 'arddoun', french: 'terre' },
+        { arabic: 'مَمْلُوءٌ', phonetic: 'mamlouu\'oun', french: 'rempli' },
+        { arabic: 'قُرْآنٌ', phonetic: 'quraanoun', french: 'coran' },
         { arabic: 'قِرَاءَةٌ', phonetic: 'qiraa\'atoun', french: 'lecture' },
-        { arabic: 'سُؤَالٌ', phonetic: 'sou\'aaloun', french: 'question' },
+        { arabic: 'سُؤَالٌ', phonetic: 'sou aaloun', french: 'question' },
         { arabic: 'بِئْرٌ', phonetic: 'bi\'roun', french: 'puit' },
         { arabic: 'سَمَاءٌ', phonetic: 'samaa\'oun', french: 'ciel' },
         { arabic: 'بَرِيءٌ', phonetic: 'barii\'oun', french: 'innocent' },
-        { arabic: 'إِلَى', phonetic: 'ilaa', french: 'jusqu\'à' },
+        { arabic: 'إِلَى', phonetic: 'ilaa', french: 'jusqu\'à' }
+    ],
+    'Cours 6-2': [
         { arabic: 'عَلَى', phonetic: '\'alaa', french: 'sur' },
         { arabic: 'قَرَأَ', phonetic: 'qara\'a', french: 'il a lu' },
         { arabic: 'لُؤْلُؤٌ', phonetic: 'lou\'lou\'oun', french: 'perle' },
@@ -71,7 +73,9 @@ const arabicWords = {
         { arabic: 'سُكَّرٌ', phonetic: 'soukkaroun', french: 'sucre' },
         { arabic: 'مُدَرِّسٌ', phonetic: 'moudarrisoun', french: 'enseignant' },
         { arabic: 'سَبُّورَةٌ', phonetic: 'sabbouratoun', french: 'tableau' },
-        { arabic: 'تَاجِرٌ', phonetic: 'taajirou', french: 'commerçant' },
+        { arabic: 'تَاجِرٌ', phonetic: 'taajirou', french: 'commerçant' }
+    ],
+    'Cours 6-3': [
         { arabic: 'إِمَامٌ', phonetic: 'imaamoun', french: 'imam' },
         { arabic: 'مُؤَذِّنٌ', phonetic: 'mou\'adhdhinoun', french: 'muezzin' },
         { arabic: 'مُمَرِّضٌ', phonetic: 'moumarridoun', french: 'soignant' },
@@ -81,13 +85,15 @@ const arabicWords = {
         { arabic: 'طَالِبٌ', phonetic: 'taaliboun', french: 'étudiant' },
         { arabic: 'غَبِيٌّ', phonetic: 'ghabiyyoun', french: 'idiot' },
         { arabic: 'غَنِيٌّ', phonetic: 'ghaniyyoun', french: 'riche' },
-        { arabic: 'ذَكِيٌّ', phonetic: 'dhakiyyoun', french: 'intelligent' },
+        { arabic: 'ذَكِيٌّ', phonetic: 'dhakiyyoun', french: 'intelligent' }
+    ],
+    'Cours 6-4': [
         { arabic: 'طَبِيبٌ', phonetic: 'tabiiboun', french: 'médecin' },
         { arabic: 'فَقِيرٌ', phonetic: 'faqiiroun', french: 'pauvre' },
         { arabic: 'ثَقِيلَةٌ', phonetic: 'thaqiilatoun', french: 'lourde' },
         { arabic: 'خَفِيفَةٌ', phonetic: 'khafiifatoun', french: 'légère' },
         { arabic: 'قَوِيٌّ', phonetic: 'qawiyyoun', french: 'fort' },
-        { arabic: 'ضَعِيفٌ', phonetic: 'da\'iifoun', french: 'faible' },
+        { arabic: 'ضَعِيفٌ', phonetic: 'da\'iifoun', french: 'faible' }
     ],
 };
 

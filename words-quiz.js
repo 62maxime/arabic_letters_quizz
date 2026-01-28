@@ -95,6 +95,20 @@ const arabicWords = {
         { arabic: 'قَوِيٌّ', phonetic: 'qawiyyoun', french: 'fort' },
         { arabic: 'ضَعِيفٌ', phonetic: 'da\'iifoun', french: 'faible' }
     ],
+    'Cours 7': [
+        { arabic: 'أُخْتٌ', phonetic: 'okhtoun', french: 'soeur' },
+        { arabic: 'امْرَأَةٌ', phonetic: 'imra\'atoun', french: 'femme' },
+        { arabic: 'ابْنَةٌ', phonetic: 'ibnatoun', french: 'fille' },
+        { arabic: 'أَخٌ', phonetic: 'akhoun', french: 'frère' },
+        { arabic: 'جَدِيدٌ', phonetic: 'jadiidoun', french: 'neuf' },
+        { arabic: 'بَعِيدٌ', phonetic: 'ba\'iidoun', french: 'loin' },
+        { arabic: 'قَرِيبَةٌ', phonetic: 'qariibatoun', french: 'proche' },
+        { arabic: 'طَبِيبٌ', phonetic: 'tabiiboun', french: 'médecin' },
+        { arabic: 'مِقْلَمَةٌ', phonetic: 'miqlamatoun', french: 'trousse' },
+        { arabic: 'مِحْفَظَةٌ', phonetic: 'mihfadhatoun', french: 'sac' },
+        { arabic: 'مَزْرَعَةٌ', phonetic: 'mazra\'atoun', french: 'ferme' },
+        { arabic: 'حَدِيقَةٌ', phonetic: 'hadiiقatoun', french: 'jardin' },
+    ]
 };
 
 let selectedCategories = [];

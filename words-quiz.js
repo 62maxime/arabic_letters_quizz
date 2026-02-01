@@ -96,7 +96,7 @@ const arabicWords = {
         { arabic: 'ضَعِيفٌ', phonetic: 'da\'iifoun', french: 'faible' }
     ],
     'Cours 7': [
-        { arabic: 'أُخْتٌ', phonetic: 'okhtoun', french: 'soeur' },
+        { arabic: 'أُخْتٌ', phonetic: 'oukhtoun', french: 'soeur' },
         { arabic: 'امْرَأَةٌ', phonetic: 'imra\'atoun', french: 'femme' },
         { arabic: 'ابْنَةٌ', phonetic: 'ibnatoun', french: 'fille' },
         { arabic: 'أَخٌ', phonetic: 'akhoun', french: 'frère' },

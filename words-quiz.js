@@ -107,7 +107,7 @@ const arabicWords = {
         { arabic: 'مِقْلَمَةٌ', phonetic: 'miqlamatoun', french: 'trousse' },
         { arabic: 'مِحْفَظَةٌ', phonetic: 'mihfadhatoun', french: 'sac' },
         { arabic: 'مَزْرَعَةٌ', phonetic: 'mazra\'atoun', french: 'ferme' },
-        { arabic: 'حَدِيقَةٌ', phonetic: 'hadiiقatoun', french: 'jardin' },
+        { arabic: 'حَدِيقَةٌ', phonetic: 'hadiighatoun', french: 'jardin' },
     ]
 };
 

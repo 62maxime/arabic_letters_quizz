@@ -219,6 +219,29 @@ function startLearnMode() {
     document.getElementById('learnProgress').textContent = `${totalWords} mot${totalWords > 1 ? 's' : ''} au total`;
 }
 
+function resetQuizz() {
+    score = 0;
+    questionsAnswered = 0;
+    remainingWords = [...selectedWords];
+
+    const feedbackDiv = document.getElementById('feedback');
+    feedbackDiv.innerHTML = ``;
+    feedbackDiv.className = 'feedback';
+
+    const inputSection = document.querySelector('.input-section');
+    inputSection.innerHTML = `
+         <input type="text" id="answerInput" class="answer-input" placeholder="Tapez la traduction en français..." autocomplete="off">
+        <button class="btn-submit" id="submitBtn">Valider</button>
+    `;
+
+    document.getElementById('submitBtn').addEventListener('click', checkAnswer);
+    document.getElementById('answerInput').addEventListener('keypress', handleKeyPress);
+
+   
+
+    nextQuestion();
+}
+
 function startQuizMode() {
     quizMode = document.querySelector('input[name="quizMode"]:checked').value;
     sensMode = document.querySelector('input[name="sensMode"]:checked').value;
@@ -343,7 +366,7 @@ function showFinalScore() {
         <button class="btn-primary retake-btn" id="retakeBtn">Refaire le Quiz</button>
     `;
 
-    document.getElementById('retakeBtn').addEventListener('click', startQuiz);
+    document.getElementById('retakeBtn').addEventListener('click', resetQuizz);
 }
 
 function updateScore() {

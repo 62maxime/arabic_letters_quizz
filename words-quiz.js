@@ -108,7 +108,24 @@ const arabicWords = {
         { arabic: 'مِحْفَظَةٌ', phonetic: 'mihfadhatoun', french: 'sac' },
         { arabic: 'مَزْرَعَةٌ', phonetic: 'mazra\'atoun', french: 'ferme' },
         { arabic: 'حَدِيقَةٌ', phonetic: 'hadiighatoun', french: 'jardin' },
-    ]
+    ],
+    'Famille': [
+        { arabic: 'الْجَدُّ', phonetic: 'aljaddou', french: 'le grand-père' },
+        { arabic: 'الْجَدَّةُ', phonetic: 'aljaddatou', french: 'la grand-mère' },
+        { arabic: 'الْأُمُّ', phonetic: 'aloummou', french: 'la mère' },
+        { arabic: 'الْأَبُ', phonetic: 'alabou', french: 'le père' },
+        { arabic: 'الْخَالَةُ', phonetic: 'alkhaalatou', french: 'la tante maternelle' },
+        { arabic: 'الْخَالُ', phonetic: 'alkhaalou', french: 'l\'oncle maternel' },
+        { arabic: 'الْعَمُّ', phonetic: 'al\'ammou', french: 'l\'oncle paternel' },
+        { arabic: 'الْعَمَّةُ', phonetic: 'al\'ammatou', french: 'la tante paternelle' },
+        { arabic: 'الْأُخْتُ', phonetic: 'alokhtou', french: 'la sœur' },
+        { arabic: 'الْأَخُ', phonetic: 'alakhoun', french: 'le frère' },
+        { arabic: 'الزَّوْجَةُ', phonetic: 'alzzawjatou', french: 'l\'épouse' },
+        { arabic: 'الِابْنُ', phonetic: 'alibnoun', french: 'le fils' },
+        { arabic: 'الْبِنْتُ', phonetic: 'albintou', french: 'la fille' },
+        { arabic: 'الْحَفِيدُ', phonetic: 'alhafiidou', french: 'le petit-fils' },
+        { arabic: 'الْحَفِيدَةُ', phonetic: 'alhafiidatou', french: 'la petite-fille' },
+    ],
 };
 
 let selectedCategories = [];

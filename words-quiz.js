@@ -121,7 +121,7 @@ const arabicWords = {
         { arabic: 'الْأُخْتُ', phonetic: 'aloukhtou', french: 'la sœur' },
         { arabic: 'الْأَخُ', phonetic: 'alakhou', french: 'le frère' },
         { arabic: 'الزَّوْجَةُ', phonetic: 'alzzawjatou', french: 'l\'épouse' },
-        { arabic: 'الِابْنُ', phonetic: 'alibnoun', french: 'le fils' },
+        { arabic: 'الِابْنُ', phonetic: 'alibnou', french: 'le fils' },
         { arabic: 'الْبِنْتُ', phonetic: 'albintou', french: 'la fille' },
         { arabic: 'الْحَفِيدُ', phonetic: 'alhafiidou', french: 'le petit-fils' },
         { arabic: 'الْحَفِيدَةُ', phonetic: 'alhafiidatou', french: 'la petite-fille' },

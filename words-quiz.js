@@ -126,7 +126,7 @@ const arabicWords = {
         { arabic: 'الْحَفِيدُ', phonetic: 'alhafiidou', french: 'le petit-fils' },
         { arabic: 'الْحَفِيدَةُ', phonetic: 'alhafiidatou', french: 'la petite-fille' },
     ],
-    "Antonyme": [
+    "Antonyme-1": [
         { arabic: 'طَبِيبٌ', phonetic: 'tabiiboun', french: 'médecin' },
         { arabic: 'مُدَرِّسٌ', phonetic: 'moudarrisoun', french: 'enseignant' },
         { arabic: 'جَدِيدٌ', phonetic: 'jadiidoun', french: 'nouveau/neuf' },
@@ -135,6 +135,9 @@ const arabicWords = {
         { arabic: 'بَعِيدٌ', phonetic: 'ba\'iidoun', french: 'loin/éloigné' },
         { arabic: 'وَاسِعٌ', phonetic: 'waasi\'oun', french: 'large/vaste' },
         { arabic: 'ضَيِّقٌ', phonetic: 'dayyiqoun', french: 'étroit' },
+    ],
+    "Antonyme-2": [
+    
         { arabic: 'نَظِيفٌ', phonetic: 'nadhiifoun', french: 'propre' },
         { arabic: 'وَسِخٌ', phonetic: 'wasikhoun', french: 'sale' },
         { arabic: 'طَوِيلٌ', phonetic: 'tawiiloun', french: 'long' },

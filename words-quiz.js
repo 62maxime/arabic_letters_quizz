@@ -126,6 +126,32 @@ const arabicWords = {
         { arabic: 'الْحَفِيدُ', phonetic: 'alhafiidou', french: 'le petit-fils' },
         { arabic: 'الْحَفِيدَةُ', phonetic: 'alhafiidatou', french: 'la petite-fille' },
     ],
+    "Antonyme": [
+        { arabic: 'طَبِيبٌ', phonetic: 'tabiiboun', french: 'médecin' },
+        { arabic: 'مُدَرِّسٌ', phonetic: 'moudarrisoun', french: 'enseignant' },
+        { arabic: 'جَدِيدٌ', phonetic: 'jadiidoun', french: 'nouveau/neuf' },
+        { arabic: 'قَدِيمٌ', phonetic: 'qadiimoun', french: 'ancien/vieux' },
+        { arabic: 'قَرِيبٌ', phonetic: 'qariiboun', french: 'proche' },
+        { arabic: 'بَعِيدٌ', phonetic: 'ba\'iidoun', french: 'loin/éloigné' },
+        { arabic: 'وَاسِعٌ', phonetic: 'waasi\'oun', french: 'large/vaste' },
+        { arabic: 'ضَيِّقٌ', phonetic: 'dayyiqoun', french: 'étroit' },
+        { arabic: 'نَظِيفٌ', phonetic: 'nadhiifoun', french: 'propre' },
+        { arabic: 'وَسِخٌ', phonetic: 'wasikhoun', french: 'sale' },
+        { arabic: 'طَوِيلٌ', phonetic: 'tawiiloun', french: 'long' },
+        { arabic: 'قَصِيرٌ', phonetic: 'qasiiroun', french: 'court' },
+        { arabic: 'بَطِيءٌ', phonetic: 'batii\'oun', french: 'lent' },
+        { arabic: 'سَرِيعٌ', phonetic: 'sarii\'oun', french: 'rapide' },
+        { arabic: 'سَهْلٌ', phonetic: 'sahloun', french: 'facile' },
+        { arabic: 'صَعْبٌ', phonetic: 'sa\'boun', french: 'difficile' },
+    ],
+    'Couleurs': [
+    { arabic: 'أَزْرَقُ', phonetic: 'azraqou', french: 'bleu' },
+    { arabic: 'أَخْضَرُ', phonetic: 'akhdarou', french: 'vert' },
+    { arabic: 'أَحْمَرُ', phonetic: 'ahmarou', french: 'rouge' },
+    { arabic: 'أَصْفَرُ', phonetic: 'asfarou', french: 'jaune' },
+    { arabic: 'أَسْوَدُ', phonetic: 'aswadou', french: 'noir' },
+    { arabic: 'أَبْيَضُ', phonetic: 'abyadou', french: 'blanc' },
+],
 };
 
 let selectedCategories = [];
